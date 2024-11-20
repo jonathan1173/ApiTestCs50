@@ -26,10 +26,21 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "apitestcs50.onrender.com",  # Dominio en producción
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Desarrollo
+    "https://miappfrontend.com",  # Producción
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Solo en desarrollo
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:   
@@ -48,9 +59,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

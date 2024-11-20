@@ -71,9 +71,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ApiTestCs50.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
 
 TEMPLATES = [
     {

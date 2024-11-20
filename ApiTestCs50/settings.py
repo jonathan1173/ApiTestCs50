@@ -32,10 +32,6 @@ ALLOWED_HOSTS = [
     "apitestcs50.onrender.com",  # Dominio en producción
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Desarrollo
-    "https://miappfrontend.com",  # Producción
-]
 
 CORS_ALLOW_ALL_ORIGINS = True  # Solo en desarrollo
 
